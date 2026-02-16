@@ -49,16 +49,32 @@ const updateCart = () => {
     allProducts.find((p) => p.id === parseInt(id)),
   );
 
+  const totalPrice = document.getElementById("totalPrice");
+  const price = productsInCart.reduce(
+    (sum, product) => sum + (product?.price || 0),
+    0,
+  );
+  totalPrice.innerText = `Total Price: $${price}`;
+
   // Generate HTML once
   cartItems.innerHTML = productsInCart
     .map(
       (product) => `
-        <div class="flex justify-between items-center bg-gray-100 p-2 rounded-lg">
-          <span class="truncate">${product.title}</span>
-          <button onclick="removeFromCart(${product.id})" class="text-red-500 hover:text-red-700">
-            <i class="fa-solid fa-trash"></i>
-          </button>
-        </div>
+        <div class="flex justify-between items-center bg-gray-100 p-3 rounded-lg shadow mb-2">
+  <div class="flex items-center gap-3">
+    <!-- Optional: product image -->
+    <img src="${product.image}" alt="${product.title}" class="w-12 h-12 object-contain rounded" />
+
+    <div class="flex flex-col">
+      <span class="font-semibold text-gray-800 line-clamp-1 ">${product.title}</span>
+      <span class="text-gray-600 text-sm">$${product.price}</span>
+    </div>
+  </div>
+
+  <button onclick="removeFromCart(${product.id})" class="text-red-500 hover:text-red-700 p-1">
+    <i class="fa-solid fa-trash"></i>
+  </button>
+</div>
       `,
     )
     .join("");
