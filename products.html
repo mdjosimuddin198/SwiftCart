@@ -3,9 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Products | SwiftCart E-Commerce</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
   <body>
-    <h2>products page</h2>
+    <section class="p-4 max-w-[81.80%] mx-auto">
+      <a href="/index.html" class="btn btn-primary">Back To Home</a>
+      <h2 class="text-4xl font-bold mb-2">Our Prouducts</h2>
+      <div
+        id="productsContainer"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-4"
+      >
+        <div id="loader" class="col-span-full text-center py-10 hidden">
+          <span class="text-xl font-semibold">Loading...</span>
+        </div>
+      </div>
+      <dialog id="my_modal_1" class="modal">
+        <div class="modal-box">
+          <div id="modalContent"></div>
+        </div>
+      </dialog>
+      <div class="flex items-center justify-center">
+        <a href="products.html" class="btn btn-primary">See More</a>
+      </div>
+    </section>
+    <script src="./js/api.js"></script>
+    <script src="./js/products.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="/js/cart.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>

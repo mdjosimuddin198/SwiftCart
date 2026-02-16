@@ -154,7 +154,11 @@
         <div
           id="productsContainer"
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-4"
-        ></div>
+        >
+          <div id="loader" class="col-span-full text-center py-10 hidden">
+            <span class="text-xl font-semibold">Loading...</span>
+          </div>
+        </div>
         <dialog id="my_modal_1" class="modal">
           <div class="modal-box">
             <div id="modalContent"></div>
@@ -168,7 +172,11 @@
     </main>
     <!-- Main Section End  -->
     <!-- js file  -->
-    <script src="./js/script.js"></script>
+    <script src="./js/api.js"></script>
     <script src="./js/products.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="/js/cart.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
