@@ -6,9 +6,58 @@ const cartCount = document.getElementById("cartCount");
 const cartEmpty = document.getElementById("cartEmpty");
 const cartItems = document.getElementById("cartItems");
 const toggleCart = document.getElementById("toggleCart");
+const categoriesContainer = document.getElementById("catagory");
+const prouductsCount = document.getElementById("prouducts_count");
+
+const allCatagory = async () => {
+  if (!categoriesContainer) return;
+  const categoriesData = await getCategories();
+  const catagoriesDataWithAll = ["All", ...categoriesData];
+
+  categoriesContainer.innerHTML = catagoriesDataWithAll
+    .map(
+      (catagory) =>
+        `<button class="btn "  data-cat="${catagory}">${catagory}</button>`,
+    )
+    .join("");
+
+  // Default: first button (All) কে active করুন
+  const buttons = categoriesContainer.querySelectorAll("button");
+  if (buttons.length) {
+    buttons[0].classList.add("btn-primary");
+  }
+
+  categoriesContainer.querySelectorAll("button").forEach((button) => {
+    button.addEventListener("click", async (e) => {
+      const category = button.getAttribute("data-cat");
+
+      // Remove active from all buttons first
+      categoriesContainer
+        .querySelectorAll("button")
+        .forEach((btn) => btn.classList.remove("btn-primary"));
+
+      // Add active class to the clicked button
+      button.classList.add("btn-primary");
+
+      if (category === "All") {
+        // All products
+        const products = await getProductsData(); // get all products
+        showProducts(products);
+      } else {
+        const categoriesProducts = await getProductByCategories(category);
+        showProducts(categoriesProducts);
+      }
+    });
+  });
+};
+
+allCatagory();
 
 const showProducts = (products, options = {}) => {
   let displayProducts = products;
+  if (prouductsCount) {
+    prouductsCount.innerText = `Total Products found ${products.length}`;
+  }
 
   if (options.filterTrending) {
     displayProducts = products.filter((p) => p.rating.rate > 4.4);
@@ -39,12 +88,12 @@ const showProducts = (products, options = {}) => {
         </div>
 
         <!-- Title -->
-        <h2 class="font-semibold text-gray-800 line-clamp-2">
+        <h2 class="font-semibold text-gray-800 line-clamp-1">
           ${product.title}
         </h2>
 
         <!-- Price -->
-        <p class="text-xl font-bold text-gray-900">$${product.price}</p>
+        <p class="text-xl font-bold text-gray-900">Price : $${product.price}</p>
 
         <!-- Buttons -->
         <div class="flex gap-3 mt-2">

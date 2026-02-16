@@ -12,7 +12,7 @@ const showDetails = async (product) => {
     </p>
 
     <p class="font-bold text-xl text-primary">
-      $${product.price}
+     Price : $${product.price}
     </p>
 
     <div class="modal-action">

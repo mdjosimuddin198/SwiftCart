@@ -26,6 +26,11 @@
       <a href="/index.html" class="btn btn-primary">Back To Home</a>
       <h2 class="text-4xl font-bold mb-2">Our Prouducts</h2>
       <div
+        id="catagory"
+        class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3"
+      ></div>
+      <h2 id="prouducts_count" class="text-xl font-semibold"></h2>
+      <div
         id="productsContainer"
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-4"
       >
@@ -38,9 +43,6 @@
           <div id="modalContent"></div>
         </div>
       </dialog>
-      <div class="flex items-center justify-center">
-        <a href="products.html" class="btn btn-primary">See More</a>
-      </div>
     </section>
     <script src="./js/api.js"></script>
     <script src="./js/products.js"></script>
