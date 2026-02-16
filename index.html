@@ -23,7 +23,9 @@
   </head>
   <body>
     <!-- Navbar Etart -->
-    <header class="navbar justify-around bg-base-100 shadow-sm">
+    <header
+      class="navbar sticky top-0 z-20 justify-around bg-base-100 shadow-sm"
+    >
       <div class="">
         <nav class="dropdown">
           <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -80,8 +82,28 @@
           </li>
         </ul>
       </nav>
-      <div class="">
-        <a class="cursor-pointer"><i class="fa-solid fa-cart-shopping"></i></a>
+      <div class="indicator">
+        <button onclick="handleCart()" class="btn btn-primary btn-circle">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </button>
+        <span
+          id="cartCount"
+          class="badge indicator-item badge-sm badge-secondary"
+        >
+          0
+        </span>
+      </div>
+      <!-- my carts  -->
+      <div
+        id="toggleCart"
+        class="bg-white shadow-lg rounded-lg w-80 p-4 absolute right-6 top-16 z-50 transition-all duration-300 ease-in-out opacity-0 -translate-y-5 pointer-events-none"
+      >
+        <h3 class="font-bold text-lg mb-3">My Cart</h3>
+        <p id="cartEmpty" class="text-gray-400"></p>
+        <div
+          id="cartItems"
+          class="flex flex-col gap-3 max-h-64 overflow-y-auto"
+        ></div>
       </div>
     </header>
     <!-- Navbar End -->
@@ -128,12 +150,25 @@
       <!-- Why Choose Us Section End  -->
       <!-- Trending Cards Sections Start-->
       <section class="p-4 max-w-[81.80%] mx-auto">
-        <h2 class="text-2xl md:text-4xl">Trending Now</h2>
+        <h2 class="text-4xl font-bold mb-2">Trending Now</h2>
+        <div
+          id="productsContainer"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-4"
+        ></div>
+        <dialog id="my_modal_1" class="modal">
+          <div class="modal-box">
+            <div id="modalContent"></div>
+          </div>
+        </dialog>
+        <div class="flex items-center justify-center">
+          <a href="products.html" class="btn btn-primary">See More</a>
+        </div>
       </section>
       <!-- Trending Cards Sections End-->
     </main>
     <!-- Main Section End  -->
     <!-- js file  -->
     <script src="./js/script.js"></script>
+    <script src="./js/products.js"></script>
   </body>
 </html>

@@ -22,7 +22,6 @@ const whyCards = [
 ];
 
 const whyChooseUsContainer = document.getElementById("whyUsCardContainer");
-console.log(whyChooseUsContainer);
 
 whyCards.forEach((card) => {
   whyChooseUsContainer.innerHTML += `
