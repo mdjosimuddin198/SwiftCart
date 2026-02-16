@@ -81,13 +81,14 @@
         </ul>
       </nav>
       <div class="">
-        <a class=""><i class="fa-solid fa-cart-shopping"></i></a>
+        <a class="cursor-pointer"><i class="fa-solid fa-cart-shopping"></i></a>
       </div>
     </header>
     <!-- Navbar End -->
     <!-- Main Section Start  -->
     <main>
-      <div
+      <!-- Hero Section Start  -->
+      <section
         class="hero min-h-[calc(100vh-90px)] bg-cover bg-center"
         style="
           background-image: url(https://raw.githubusercontent.com/Apollo-Level2-Web-Dev/mission-restart-a6/refs/heads/main/Assets/banner-image.png);
@@ -111,8 +112,28 @@
             <button class="btn btn-primary px-6">Shop Now</button>
           </div>
         </div>
-      </div>
+      </section>
+      <!-- Hero Section End  -->
+      <!-- Why Choose Us Section Start  -->
+      <section class="text-center py-4 bg-gray-200">
+        <h2 class="text-4xl font-bold mb-2">Why Choose Us</h2>
+        <p class="text-gray-500 mb-12">
+          We provide the best shopping experience with top-notch services.
+        </p>
+        <div
+          id="whyUsCardContainer"
+          class="grid grid-cols-1 max-w-[80.80%] mx-auto md:grid-cols-2 lg:grid-cols-4 gap-8 py-4"
+        ></div>
+      </section>
+      <!-- Why Choose Us Section End  -->
+      <!-- Trending Cards Sections Start-->
+      <section class="p-4 max-w-[81.80%] mx-auto">
+        <h2 class="text-2xl md:text-4xl">Trending Now</h2>
+      </section>
+      <!-- Trending Cards Sections End-->
     </main>
     <!-- Main Section End  -->
+    <!-- js file  -->
+    <script src="./js/script.js"></script>
   </body>
 </html>
