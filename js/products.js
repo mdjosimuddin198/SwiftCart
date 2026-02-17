@@ -8,6 +8,9 @@ const cartItems = document.getElementById("cartItems");
 const toggleCart = document.getElementById("toggleCart");
 const categoriesContainer = document.getElementById("catagory");
 const prouductsCount = document.getElementById("prouducts_count");
+const footerYear = document.getElementById("footerYear");
+
+footerYear.innerText = `© ${new Date().getFullYear()} SwiftCart, Inc. All rights reserved.`;
 
 const allCatagory = async () => {
   if (!categoriesContainer) return;

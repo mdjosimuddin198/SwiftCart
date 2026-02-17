@@ -22,12 +22,114 @@
     />
   </head>
   <body>
+    <!-- Navbar Etart -->
+    <header
+      class="navbar sticky top-0 z-20 justify-around bg-base-100 shadow-sm"
+    >
+      <div class="">
+        <nav class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+          <ul
+            tabindex="-1"
+            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+          >
+            <li>
+              <a
+                href="index.html"
+                class="hover:text-blue-500 hover:font-semibold nav-link"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                class="hover:text-blue-500 hover:font-semibold nav-link"
+                href="products.html"
+                >Products</a
+              >
+            </li>
+            <li>
+              <a
+                class="hover:text-blue-500 hover:font-semibold nav-link"
+                class="hover:text-red-200"
+                href="about.html"
+                >About</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-blue-500 hover:font-semibold nav-link"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <a class="text-blue-500 font-semibold text-xl md:text-3xl">SwiftCart</a>
+      </div>
+      <nav class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1">
+          <li>
+            <a
+              href="index.html"
+              class="hover:text-blue-500 hover:font-semibold nav-link"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:text-blue-500 hover:font-semibold nav-link"
+              href="products.html"
+              >Products</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:text-blue-500 hover:font-semibold nav-link"
+              href="about.html"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:text-blue-500 hover:font-semibold nav-link"
+              href="contact.html"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div class="indicator">
+        <button onclick="handleCart()" class="btn btn-primary btn-circle">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </button>
+        <span
+          id="cartCount"
+          class="badge indicator-item badge-sm badge-secondary"
+        >
+          0
+        </span>
+      </div>
+      <!-- my carts  -->
+      <div
+        id="toggleCart"
+        class="bg-white shadow-lg rounded-lg w-80 p-4 absolute right-6 top-16 z-50 transition-all duration-300 ease-in-out opacity-0 -translate-y-5 pointer-events-none"
+      >
+        <h3 class="font-bold text-lg mb-3">My Cart</h3>
+        <p id="cartEmpty" class="text-gray-400"></p>
+        <div
+          id="cartItems"
+          class="flex flex-col gap-3 max-h-64 overflow-y-auto"
+        ></div>
+        <hr class="p-4 m-4" />
+        <p id="totalPrice" class="text-xl font-semibold"></p>
+      </div>
+    </header>
+    <!-- Navbar End -->
     <section class="p-4 max-w-[81.80%] mx-auto">
-      <a href="/index.html" class="btn btn-primary">Back To Home</a>
       <h2 class="text-4xl font-bold mb-2">Our Prouducts</h2>
       <div
         id="catagory"
-        class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3"
+        class="grid grid-cols-3 md:grid-cols-4 mb-4 lg:grid-cols-5 gap-3"
       ></div>
       <h2 id="prouducts_count" class="text-xl font-semibold"></h2>
       <div
@@ -44,6 +146,128 @@
         </div>
       </dialog>
     </section>
+
+    <footer class="bg-slate-900 text-gray-300">
+      <div class="max-w-[81.80%] mx-auto">
+        <div
+          class="px-6 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
+        >
+          <!-- Brand Section -->
+          <div>
+            <a class="text-blue-500 font-semibold text-xl md:text-3xl"
+              >SwiftCart</a
+            >
+            <p class="text-gray-400 leading-relaxed">
+              Your one-stop shop for all your fashion and lifestyle needs.
+              Quality products, fast delivery, and excellent support.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h3
+              class="text-lg font-semibold text-white mb-4 uppercase tracking-wide"
+            >
+              Quick Links
+            </h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="index.html" class="hover:text-indigo-400 transition"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="products.html" class="hover:text-indigo-400 transition"
+                  >Products</a
+                >
+              </li>
+              <li>
+                <a href="about.html" class="hover:text-indigo-400 transition"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a href="contact.html" class="hover:text-indigo-400 transition"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div>
+            <h3
+              class="text-lg font-semibold text-white mb-4 uppercase tracking-wide"
+            >
+              Support
+            </h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="hover:text-indigo-400 transition">FAQ</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-indigo-400 transition"
+                  >Shipping</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-indigo-400 transition">Returns</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-indigo-400 transition"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <form>
+            <h6 class="footer-title">Newsletter</h6>
+            <fieldset class="">
+              <label>Enter your email address</label>
+              <div class="join">
+                <input
+                  type="text"
+                  placeholder="username@site.com"
+                  class="input w-48 join-item"
+                />
+                <button class="btn btn-primary join-item">Subscribe</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-gray-700">
+          <div
+            class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center"
+          >
+            <aside id="footerYear" class="text-gray-500 text-sm"></aside>
+
+            <!-- Social Icons -->
+            <div class="flex gap-5 mt-4 md:mt-0 text-gray-400 text-lg">
+              <a href="#" class="hover:text-indigo-400 transition">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="#" class="hover:text-indigo-400 transition">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a href="#" class="hover:text-indigo-400 transition">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="#" class="hover:text-indigo-400 transition">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="hover:text-indigo-400 transition">
+                <i class="fa-regular fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <script src="./js/api.js"></script>
     <script src="./js/products.js"></script>
     <script src="./js/modal.js"></script>

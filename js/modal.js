@@ -1,7 +1,7 @@
 const showDetails = async (product) => {
   modalContent.innerHTML = `
     <img src="${product.image}" 
-         class="h-40 mx-auto object-contain mb-4"/>
+         class="h-40 mx-auto  object-contain mb-4"/>
 
     <h3 class="font-bold text-lg mb-2">
       ${product.title}
